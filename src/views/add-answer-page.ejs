@@ -1,0 +1,18 @@
+<h1>All Answers of <%= question.question %></h1>
+<table>
+  <% question?.Answers?.forEach(answer => { %>
+  <tr><td><span><%= answer.answer %>   <%= answer.isCorrect %></span></td></tr>
+  <% }) %>
+</table>
+
+<h2>Add New Answer</h2>
+<form action="/form/questions/<%= question.id%>/answers" method="post">
+  <label for="answerContent">Answer Content:</label>
+  <input type="text" id="answerContent" name="answerContent" required />
+  <label for="isCorrect">Is Correct:</label>
+  <input type="checkbox" id="isCorrect" name="isCorrect">
+  <br><br>
+  <label style="padding-left: 20px;" for="email">Admin Email:</label>
+  <input type="email" id="email" name="email" required />
+  <button type="submit">Create Answer</button>
+</form>

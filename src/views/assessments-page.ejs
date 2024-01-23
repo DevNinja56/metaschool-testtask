@@ -1,0 +1,8 @@
+<h1>All Assessments</h1>
+<ul>
+  <% assessments?.forEach(assessment => { %>
+  <li>
+    <a href="/assessment/<%= assessment.id %>"><%= assessment.title %></a>
+  </li>
+  <% }) %>
+</ul>

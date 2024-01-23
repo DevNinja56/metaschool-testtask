@@ -1,0 +1,21 @@
+<h1><%= assessment?.title %> Details</h1>
+<ul>
+  <% assessment?.Sections?.forEach(section => { %>
+  <li>
+    <h2><%= section?.title %></h2>
+    <ul>
+      <% section?.Questions?.forEach(question => { %>
+      <li>
+        <p><%= question?.question %> (<%= question?.type %>)</p>
+        <ul>
+          <% question?.Answers?.forEach(answer => { %>
+          <li><%= answer?.answer %> (<%= answer?.isCorrect %>)</li>
+          <% }) %>
+        </ul>
+      </li>
+      <% }) %>
+    </ul>
+  </li>
+  <% }) %>
+</ul>
+<a href="/">Back to All Assessments</a>
